@@ -80,7 +80,7 @@ const icons = [
     icon: <CgMicrosoft />,
     name: "Microsoft Enviroment",
     description:
-      " Conjunto de tecnologias e ferramentas da Microsoft, incluindo Windows, Azure, .NET e Office 365, para desenvolvimento e produtividade",
+      " Conjunto de tecnologias Azure, .NET e Office 365, para desenvolvimento e produtividade",
   },
   {
     icon: <DiPython />,
@@ -99,7 +99,7 @@ const ProfileSkilss = () => {
     <>
       <h1 className="text-muted mb-4 px-8 text-3xl">Conhecimentos</h1>
       <div className="flex">
-        <div className="flex w-[50%] flex-wrap justify-center gap-4 rounded-lg bg-gray-900 p-8">
+        <div className="flex w-[40%] flex-wrap justify-center gap-4 rounded-lg bg-gray-900 p-8">
           {icons.map((item, index) => (
             <div
               key={index}
