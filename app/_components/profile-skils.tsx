@@ -2,7 +2,7 @@
 
 import {
   SiCss3,
-  SiFigma,
+  SiGit,
   SiHtml5,
   SiJavascript,
   SiNextdotjs,
@@ -70,9 +70,10 @@ const icons = [
   },
 
   {
-    icon: <SiFigma />,
-    name: "Figma",
-    description: "Ferramenta de design colaborativa para UI/UX.",
+    icon: <SiGit />,
+    name: "Git",
+    description:
+      "Sistema de controle de versão para rastrear mudanças e colaborar em projetos.",
   },
 
   {
