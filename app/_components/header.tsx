@@ -1,4 +1,3 @@
-import NavigationMenu from "./navigation-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Header = () => {
@@ -9,11 +8,14 @@ const Header = () => {
           <AvatarImage src="/perfil.jpg" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <h1 className="text-2xl font-bold text-white">João Pedro</h1>
+        <div>
+          <h1 className="text-2xl font-bold text-white">João Pedro</h1>
+          <h1 className="text-[12px] text-gray-400">
+            Desenvolvedor Full-Stack
+          </h1>
+        </div>
       </div>
       <div className="flex-grow" />
-
-      <NavigationMenu />
     </div>
   );
 };

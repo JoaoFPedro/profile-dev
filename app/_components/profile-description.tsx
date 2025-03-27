@@ -13,9 +13,6 @@ const ProfileDescription = () => {
       <h1 className={`${poppins.className} mt-2 text-5xl font-bold`}>
         Eu construo experiências digitais!
       </h1>
-      <h1 className="mt-2 text-2xl font-light text-gray-400">
-        Desenvolvedor Full-Stack
-      </h1>
     </div>
   );
 };
