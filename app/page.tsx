@@ -7,13 +7,11 @@ import Projects from "./_components/projects";
 export default function Home() {
   return (
     <>
-      <div className="space-y-10 px-60">
-        <Header />
-        <ProfileDescription />
-        <ProfileSkilss />
-        <Projects />
-        <ContactMe />
-      </div>
+      <Header />
+      <ProfileDescription />
+      <ProfileSkilss />
+      <Projects />
+      <ContactMe />
     </>
   );
 }
