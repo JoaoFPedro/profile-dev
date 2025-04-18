@@ -11,79 +11,79 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { useState } from "react";
 import { BiMobile } from "react-icons/bi";
 import { CgMicrosoft } from "react-icons/cg";
 import { DiPython } from "react-icons/di";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 const icons = [
   {
-    icon: <SiHtml5 />,
+    icon: <SiHtml5 size={20} />,
     name: "HTML",
     description: "Linguagem de marcação para estruturação de páginas web.",
   },
   {
-    icon: <SiCss3 />,
+    icon: <SiCss3 size={20} />,
     name: "CSS",
     description: "Linguagem de estilos para design e layout de páginas web.",
   },
   {
-    icon: <SiTailwindcss />,
+    icon: <SiTailwindcss size={20} />,
     name: "Tailwind",
     description:
       "Framework CSS utilitário para estilização rápida e eficiente.",
   },
   {
-    icon: <SiJavascript />,
-    name: "JS",
+    icon: <SiJavascript size={20} />,
+    name: "JavaScript",
     description:
       "Linguagem de programação para interatividade e lógica no front-end.",
   },
   {
-    icon: <SiTypescript />,
-    name: "TS",
+    icon: <SiTypescript size={20} />,
+    name: "TypeScript",
     description: "Superset do JavaScript que adiciona tipagem estática.",
   },
   {
-    icon: <SiNodedotjs />,
+    icon: <SiNodedotjs size={20} />,
     name: "Node Js",
     description:
-      "Ambiente de execução JavaScript no lado do servidor, eficiente e escalável, baseado no motor V8 do Chrome.",
+      "Ambiente de execução JavaScript no lado do servidor, eficiente e escalável.",
   },
   {
-    icon: <SiReact />,
+    icon: <SiReact size={20} />,
     name: "React",
     description:
       "Biblioteca JavaScript para construção de interfaces de usuário reativas.",
   },
   {
-    icon: <SiNextdotjs />,
+    icon: <SiNextdotjs size={20} />,
     name: "Next.js",
     description:
       "Framework React para renderização no servidor e geração de sites estáticos.",
   },
   {
-    icon: <BiMobile />,
+    icon: <BiMobile size={20} />,
     name: "React Native",
     description:
       "Framework para desenvolvimento de aplicativos móveis nativos usando JavaScript e React.",
   },
 
   {
-    icon: <SiGit />,
+    icon: <SiGit size={20} />,
     name: "Git",
     description:
       "Sistema de controle de versão para rastrear mudanças e colaborar em projetos.",
   },
 
   {
-    icon: <CgMicrosoft />,
+    icon: <CgMicrosoft size={20} />,
     name: "Microsoft Enviroment",
     description:
-      " Conjunto de tecnologias Azure, .NET e Office 365, para desenvolvimento e produtividade",
+      " Conjunto de tecnologias Azure, .NET e Office 365, para desenvolvimento e produtividade.",
   },
   {
-    icon: <DiPython />,
+    icon: <DiPython size={20} />,
     name: "Python",
     description:
       " Linguagem de programação amplamente usada em automação, ciência de dados, web e inteligência artificial.",
@@ -91,34 +91,27 @@ const icons = [
 ];
 
 const ProfileSkilss = () => {
-  const [hoveredTech, setHoveredTech] = useState<(typeof icons)[number] | null>(
-    null,
-  );
-
   return (
     <>
-      <h1 className="text-muted mb-4 px-8 text-3xl">Conhecimentos</h1>
-      <div className="flex">
-        <div className="flex w-[40%] flex-wrap justify-center gap-4 rounded-lg bg-gray-900 p-8">
-          {icons.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-2 shadow-lg transition-all hover:bg-purple-500"
-              style={{ flex: "1 1 calc(25% - 8px)" }}
-              onMouseEnter={() => setHoveredTech(item)}
-              onMouseLeave={() => setHoveredTech(null)}
-            >
-              <span className="mb-1 text-sm text-gray-300">{item.name}</span>
-              <span className="text-3xl text-purple-400">{item.icon}</span>
-            </div>
-          ))}
-        </div>
-        {hoveredTech && (
-          <div className="mt-10">
-            <h2 className="text-2xl text-purple-400">{hoveredTech.name}</h2>
-            <p className="text-xl text-gray-300">{hoveredTech.description}</p>
+      <h1 className="text-muted px-6 py-3 text-2xl font-bold">Habilidades</h1>
+      <div className="flex flex-wrap justify-center gap-4 p-6">
+        {icons.map((item, index) => (
+          <div key={index} className="h-50 w-60 flex-grow">
+            <Card className="flex h-full flex-col bg-gray-900">
+              <CardHeader>
+                <CardTitle>
+                  <div className="flex items-center gap-2">
+                    <h1 className="text-muted">{item.name}</h1>
+                    <span className="text-blue-700">{item.icon}</span>
+                  </div>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <span className="text-muted">{item.description}</span>
+              </CardContent>
+            </Card>
           </div>
-        )}
+        ))}
       </div>
     </>
   );
