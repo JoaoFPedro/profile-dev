@@ -11,7 +11,6 @@ export default function Home() {
       <ProfileDescription />
       <ProfileSkilss />
       <Projects />
-      <ContactMe />
     </>
   );
 }
