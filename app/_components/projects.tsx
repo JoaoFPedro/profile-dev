@@ -1,7 +1,14 @@
 "use client";
 import Image from "next/image";
 
-import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
 
 const projects = [
   {
@@ -31,54 +38,45 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [hoveredTech, setHoveredTech] = useState<
-    (typeof projects)[number] | null
-  >(null);
   const handleCardClick = (link: string | URL | undefined) => {
     window.open(link, "_blank");
   };
   return (
     <>
-      <h1 className="text-muted mb-2 px-8 text-3xl">Projetos</h1>
-      <div className="flex">
-        <div className="flex w-[60%] flex-wrap justify-center gap-4 rounded-lg bg-gray-900 p-8">
-          {projects.map((item, index) => (
-            <div
-              key={index}
-              className="relative flex h-30 w-80 overflow-hidden rounded-lg bg-gray-800 p-12 shadow-lg transition-all hover:bg-purple-500"
-              style={{ flex: "1 1 calc(50% - 8px)" }}
-              onMouseEnter={() => setHoveredTech(item)}
-              onMouseLeave={() => setHoveredTech(null)}
-            >
-              <span className="mb-1 text-sm text-gray-300">{item.name}</span>
-              <div className="cursor-pointer hover:bg-purple-500">
+      <h1 className="text-muted px-6 py-3 text-center text-2xl font-bold">
+        Projetos
+      </h1>
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {projects.map((item, index) => (
+          <div key={index} className="w-full p-4">
+            <Card className="flex h-full flex-col justify-between rounded-xl border border-blue-700 bg-gray-900 p-4">
+              <CardHeader>
+                <CardTitle>
+                  <h1 className="text-muted">{item.name}</h1>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
                 <Image
                   src={item.image}
                   alt={item.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-all duration-300 hover:brightness-50"
-                  onClick={() => handleCardClick(item.link)}
+                  width={500}
+                  height={500}
                 />
-              </div>
-            </div>
-          ))}
-        </div>
-        {hoveredTech && (
-          <div className="">
-            <h2 className="text-2xl text-purple-400">{hoveredTech.name}</h2>
-            <p className="mb-5 text-xl text-gray-300">
-              {hoveredTech.description}
-            </p>
-            <Image
-              src={hoveredTech.image}
-              alt={hoveredTech.name}
-              width={900}
-              height={900}
-              className="mb-8 h-60 w-150 transition-all duration-300 hover:brightness-50"
-            />
+                <h1 className="text-muted mt-4">{item.description}</h1>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button
+                  onClick={() => handleCardClick(item.link)}
+                  className="cursor-pointer bg-blue-700 hover:bg-none"
+                  variant="ghost"
+                >
+                  Acessar
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
-        )}
+        ))}
       </div>
     </>
   );
