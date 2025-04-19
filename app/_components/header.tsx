@@ -1,3 +1,4 @@
+import ContactMe from "./contact-me";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
           </h1>
         </div>
       </div>
-      <div className="flex-grow" />
+      <ContactMe />
     </div>
   );
 };
