@@ -93,11 +93,13 @@ const icons = [
 const ProfileSkilss = () => {
   return (
     <>
-      <h1 className="text-muted px-6 py-3 text-2xl font-bold">Habilidades</h1>
+      <h1 className="text-muted px-6 py-3 text-center text-2xl font-bold">
+        Habilidades
+      </h1>
       <div className="flex flex-wrap justify-center gap-4 p-6">
         {icons.map((item, index) => (
           <div key={index} className="h-50 w-60 flex-grow">
-            <Card className="flex h-full flex-col bg-gray-900">
+            <Card className="flex h-full flex-col border-blue-700 bg-gray-900">
               <CardHeader>
                 <CardTitle>
                   <div className="flex items-center gap-2">
