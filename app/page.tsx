@@ -1,4 +1,3 @@
-import ContactMe from "./_components/contact-me";
 import Header from "./_components/header";
 import ProfileDescription from "./_components/profile-description";
 import ProfileSkilss from "./_components/profile-skils";
